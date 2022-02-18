@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Input from '@mui/material/Input';
 
 import './FormCad.css';
 import { FormControl } from "@mui/material";
@@ -36,7 +37,7 @@ export default (props) => {
       <h2>Dados Pessoais</h2>
       <Box component="form"
       sx={{
-        '& .MuiTextField-root': { m: 3, width: '46ch' },
+        '& .MuiTextField-root': { m: 3, width: '38ch' },
       }}
       noValidate
       autoComplete="off">
@@ -44,7 +45,7 @@ export default (props) => {
         <TextField id="surname" label="Sobrenome:" variant="standard" />
         <TextField id="rg" label="RG:" variant="standard" />
         <TextField id="cpf" label="CPF:" variant="standard" />
-        <TextField mid="dtNasc" calendar variant="standard" type="date" helperText="Por favor informe sua Data de nascimento"/>
+        <TextField id="dtNasc" label calendar variant="standard" type="date" helperText="Por favor informe sua Data de nascimento"/>
         <TextField
           id="sexo"
           select
@@ -66,7 +67,7 @@ export default (props) => {
       <h2>Endereço</h2>
       <Box component="form"
       sx={{
-        '& .MuiTextField-root': { m: 3, width: '46ch' },
+        '& .MuiTextField-root': { m: 3, width: '36ch' },
       }}
       noValidate
       autoComplete="off">
@@ -83,18 +84,22 @@ export default (props) => {
       </TextField> */}
       </Box>
       <Box component="form" >
-        <TextField sx={{m:2, width:'46ch'}} id="rua" label="Rua:" variant="standard"/>
-        <TextField sx={{mt:2, ml:3.5,  width:'21.5ch'}} id="numResid" label="Nº da Residência:" variant="standard"/>
-        <TextField sx={{m:2, width:'22.5ch'}} id="complemento" label="Complemento:" variant="standard" />
+        <TextField sx={{m:2, width:'36ch'}} id="rua" label="Rua:" variant="standard"/>
+        <TextField sx={{mt:2, ml:3.5,  width:'17.3ch'}} id="numResid" label="Número:" variant="standard"/>
+        <TextField sx={{m:2, width:'17.3ch'}} id="complemento" label="Complemento:" variant="standard" />
       </Box>
     </div>
     <div>
-      <h2>Dados de Contato:</h2>
-      <TextField type="email" id="email" name="email" label="Email" variant="standard"/>
-      <TextField type="tel" id="phone1" name="phone1" label="Telefone 1:" variant="standard"/>
-      <TextField type="tel" id="phone2" name="phone2" label="Telefone 2:" variant="standard"/>
-
+      <Box component="form" sx={{'& .MuiTextField-root': {m:3, width:'36ch'}}}>
+        <h2>Dados de Contato:</h2>
+        <TextField type="email" id="email" name="email" label="Email" variant="standard"/>
+        <TextField type="tel" id="phone1" name="phone1" label="Telefone 1:" variant="standard"/>
+        <TextField className="inputPhone" type="tel" id="phone2" name="phone2" label="Telefone 2:" variant="standard"/>
+        <TextField sx={{visibility: 'hidden'}}/>
+      </Box>
+      
     </div>
+   
   </div>
   )
 } 
